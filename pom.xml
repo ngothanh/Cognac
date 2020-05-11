@@ -12,10 +12,11 @@
 
     <artifactId>cognac</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1 -SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>cognac-tools</module>
         <module>cognac-concurrency</module>
+        <module>cognac-pipe</module>
     </modules>
 
     <properties>
