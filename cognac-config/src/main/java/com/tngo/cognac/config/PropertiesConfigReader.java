@@ -20,7 +20,7 @@ import static com.tngo.cognac.config.support.EnvironmentVariables.resolve;
 public class PropertiesConfigReader<ConfigType> {
 
     public static <T> PropertiesConfigReader<T> forType(Class<T> type) {
-        return new PropertiesConfigReader<T>(type);
+        return new PropertiesConfigReader<>(type);
     }
 
     private final Class<ConfigType> type;
