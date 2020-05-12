@@ -18,6 +18,7 @@
         <module>cognac-concurrency</module>
         <module>cognac-pipe</module>
         <module>cognac-config</module>
+        <module>cognac-spinner</module>
     </modules>
 
     <properties>

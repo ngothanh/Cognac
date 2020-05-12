@@ -3,7 +3,7 @@ package com.tngo.cognac.config.support;
 import com.tngo.cognac.config.ConfigField;
 import com.tngo.cognac.config.ConfigPrefix;
 import com.tngo.cognac.config.ConfigScope;
-import com.tngo.cognac.config.exceptions.PrebootException;
+import com.tngo.cognac.config.exceptions.CognacConfigException;
 import io.gridgo.bean.BObject;
 import lombok.Builder;
 import lombok.NonNull;
@@ -35,7 +35,7 @@ public class ReflectiveObjectMaker {
                 return root;
 
             if (visited.contains(root))
-                throw new PrebootException("Circular reference detected");
+                throw new CognacConfigException("Circular reference detected");
 
             visited.add(root);
             root = root.parent;
@@ -106,7 +106,7 @@ public class ReflectiveObjectMaker {
         try {
             return (T) _make();
         } catch (Exception e) {
-            throw new PrebootException("Cannot make target object", e);
+            throw new CognacConfigException("Cannot make target object", e);
         }
     }
 }

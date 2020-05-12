@@ -1,6 +1,6 @@
 package com.tngo.cognac.config.support;
 
-import com.tngo.cognac.config.exceptions.PrebootException;
+import com.tngo.cognac.config.exceptions.CognacConfigException;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 
@@ -65,7 +65,7 @@ public class EnvironmentVariables {
         try (var input = new FileInputStream(file)) {
             setSystemProperties(input);
         } catch (Exception e) {
-            throw new PrebootException("Error while loading file", e);
+            throw new CognacConfigException("Error while loading file", e);
         }
     }
 
@@ -74,7 +74,7 @@ public class EnvironmentVariables {
         try {
             props.load(input);
         } catch (IOException e) {
-            throw new PrebootException("Error while loading input stream", e);
+            throw new CognacConfigException("Error while loading input stream", e);
         }
         setSystemProperties(props);
     }
