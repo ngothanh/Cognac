@@ -11,5 +11,28 @@
 
     <artifactId>cognac-spinner</artifactId>
 
+    <properties>
+        <kafka.client.version>2.3.0</kafka.client.version>
+        <disruptor.version>3.4.2</disruptor.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.client.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>${disruptor.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tngo</groupId>
+            <artifactId>cognac-tools</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
 
 </project>
